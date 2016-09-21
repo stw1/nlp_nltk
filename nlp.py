@@ -1,5 +1,8 @@
 from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
+
+# Tutorial from sentdex -> https://www.youtube.com/playlist?list=PLQVvvaa0QuDf2JswnfiGkliBInZnIC4HL
 
 example_sentence ="This is an example showing off stop word filtration.  I was taking a ride in the car.  I was riding in the car."
 
