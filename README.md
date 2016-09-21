@@ -1,3 +1,7 @@
 # nlp_nltk
 
-Python NLTK Library
+## Python NLTK Library 
+
+### Examples
+* Stop words
+* Stemming
