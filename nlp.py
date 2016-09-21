@@ -1,0 +1,3 @@
+mport nltk
+
+nltk.download()
