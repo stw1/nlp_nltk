@@ -48,9 +48,9 @@ frequency_count_sentence = {}
 
 for w in filtered_sentence:
 	if w in frequency_count_sentence:
-		frequency_count_sentence[w] += 10
+		frequency_count_sentence[w] += 5
 	else:
-		frequency_count_sentence[w] = 10
+		frequency_count_sentence[w] = 5
 
 
 # print(json.dumps(frequency_count_sentence))
