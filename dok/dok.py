@@ -78,14 +78,25 @@ test = [
 cl = NaiveBayesClassifier(train)
 
 # Classify a TextBlob
-example_sentience = "Can you really experience anything objectively.  Formulate, critique, then investigate your answer?"
+# example_sentence = "Can you really experience anything objectively.  Formulate, critique, then investigate your answer?"
+example_sentence = "draw define"
 
-blob = TextBlob(example_sentience, classifier=cl)
+
+blob = TextBlob(example_sentence, classifier=cl)
 
 
 
 for sentence in blob.sentences:
     print(sentence)
+
+    prob_dist = cl.prob_classify(sentence)
+
+    print("Level 1: ", round(prob_dist.prob("lvl_1"), 2))
+    print("Level 2: ", round(prob_dist.prob("lvl_2"), 2))
+    print("Level 3: ", round(prob_dist.prob("lvl_3"), 2))
+    print("Level 4: ", round(prob_dist.prob("lvl_4"), 2))
+    
+
     if (sentence.classify() == "lvl_1"):
         print("Level One: Recall")
     elif (sentence.classify() == "lvl_2"):
@@ -95,14 +106,5 @@ for sentence in blob.sentences:
     else:
         print("Level Four: Extended Thinking")
 
-# Compute accuracy
-accuracy = cl.accuracy(test)
-print("Accuracy: {0}".format(accuracy))
 
-prob_dist = cl.prob_classify(example_sentience)
-print("Level 1: ", round(prob_dist.prob("lvl_1"), 2))
-print("Level 2: ", round(prob_dist.prob("lvl_2"), 2))
-print("Level 3: ", round(prob_dist.prob("lvl_3"), 2))
-print("Level 4: ", round(prob_dist.prob("lvl_4"), 2))
-
-cl.show_informative_features(5)
+    
