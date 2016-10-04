@@ -77,12 +77,8 @@ test = [
 
 cl = NaiveBayesClassifier(train)
 
-# Classify some text
-# print(cl.classify("How do you draw a picture?"))  # "pos"
-# print(cl.classify("Prove to me you are wise."))   # "neg"
-
 # Classify a TextBlob
-example_sentience = "Where did the Imperial Library of Constantinople get THEIR information and who is responsible for the initial drawing of that map?"
+example_sentience = "Can you really experience anything objectively.  Formulate, critique, then investigate your answer?"
 
 blob = TextBlob(example_sentience, classifier=cl)
 
@@ -109,4 +105,4 @@ print("Level 2: ", round(prob_dist.prob("lvl_2"), 2))
 print("Level 3: ", round(prob_dist.prob("lvl_3"), 2))
 print("Level 4: ", round(prob_dist.prob("lvl_4"), 2))
 
-
+cl.show_informative_features(5)
